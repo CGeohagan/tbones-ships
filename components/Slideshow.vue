@@ -1,0 +1,143 @@
+<template>
+  <div class="slideshow__wrapper">
+    <div class="slideshow__arrows">
+      <div 
+        v-on:click="leftClick" 
+        class="arrow arrow-left"
+        :class="[activeIndex === 0 ? 'hidden' : '']">
+        <arrow/>
+      </div>
+      <div 
+        v-on:click="rightClick" 
+        class="arrow arrow-right"
+        :class="[activeIndex === numberOfImages - 1 ? 'hidden' : '']">
+        <arrow/>
+      </div>
+    </div>
+    <div class="slideshow">
+      <ul class="slideshow__list" :style="slideshowStyle" >
+        <li 
+          v-for="(image, index) in images" 
+          :key="`item-${index}`"
+          :class="[index === activeIndex ? 'active' : 'inactive']"
+          class="slideshow__item">
+          <img :src="image">
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script>
+import Arrow from '~/components/Arrow.vue'
+
+export default {
+  components: {
+    Arrow
+  },
+  props: ['images'],
+  computed: {
+    slideshowStyle () {
+      const currentTransform = this.activeIndex * 100 / this.numberOfImages;
+      return `width: ${this.numberOfImages * 100}%; transform: translateX(-${currentTransform}%)`
+    },
+  },
+  methods: {
+    rightClick: function(ev) {
+      ev.stopPropagation();
+      if (this.activeIndex === this.numberOfImages - 1) {
+        return;
+      } 
+
+      this.activeIndex++;
+    },
+    leftClick: function(ev) {
+      ev.stopPropagation();
+      if (this.activeIndex === 0) {
+        return;
+      } 
+
+      this.activeIndex--;
+    },
+  },
+  data() {
+    return {
+      activeIndex: 0,
+      numberOfImages: this.images.length,
+    }
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+@import "../assets/scss/main.scss";
+
+.slideshow {
+  overflow: hidden;
+  width: 100%;
+
+  &__arrows {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    left: 5%;
+    position: absolute;
+    top: 41%;
+    width: 90%;
+    z-index: 10;
+
+    @media screen and (max-width: $break-small) {
+      left: 2.5%;
+      width: 95%;
+    }
+  }
+
+  &__item {
+    transition: transform .4s ease-out;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: all .4s ease-out;
+  }
+
+  &__wrapper {
+    border: 4px double white;
+    padding: 2em;
+    position: relative;
+    width: 100%;
+
+    @media screen and (max-width: $break-small) {
+      border: none;
+      padding: 0;
+    }
+  }
+}
+
+.arrow {
+  color: $dark-blue;
+  display: flex;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: transform .3s ease-out, opacity .3s ease-out;
+  width: 60px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.arrow-left {
+  transform: rotate(-180deg);
+  &:hover {
+    transform: rotate(-180deg) scale(1.05);
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+</style>

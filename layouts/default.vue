@@ -93,12 +93,12 @@ main {
 }
 
 main {
-  transition: opacity .3s ease-out;
+  transition: opacity .5s ease-out;
 }
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: all .4s ease-out;
+  transition: all .5s ease-out;
 }
 
 .slide-enter,

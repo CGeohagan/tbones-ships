@@ -1,7 +1,7 @@
 <template>
   <div class="ship__wrapper">
     <div class="circle">
-      <div class="ship" ref="ship">
+      <div class="ship rotate" ref="ship">
         <svg viewBox="0 0 863 573" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g fill-rule="nonzero" stroke="none" stroke-width="1" fill="none">
               <path d="M0,416 C13.8893229,424.190104 25.2018229,429.376302 33.9375,431.558594 C36.3161632,432.152816 56.4335938,439.664062 90.2929688,442.677734 C112.865885,444.686849 330.082031,444.686849 741.941406,442.677734 C718.64974,442.677734 696.86849,447.722656 676.597656,457.8125 C656.326823,467.902344 639.363281,504.817708 625.707031,568.558594 C373.58991,573.432263 208.967514,563.26169 131.839844,538.046875 C54.7121738,512.83206 10.7655592,472.149768 0,416 Z" fill="#D8D8D8" transform="translate(0 3)"/>
@@ -31,8 +31,6 @@
 </template>
 
 <script>
-import { TimelineMax } from 'gsap';
-
 export default {
   data() {
     return {
@@ -40,23 +38,17 @@ export default {
     }
   },
   methods: {
-    animateShip: function() {
-      var tl = new TimelineMax({repeat: 2});
-      var tl2 = new TimelineMax({repeat: 1});
-      var ship = document.querySelector('.ship');
-      // var wave1 = document.querySelector('.wave-1');
-      // var wave2 = document.querySelector('.wave-2');
-
-      tl2.fromTo(this.$refs.ship, 2.4, {rotation:0, ease:"power1.inOut"}, {rotation:-8})
-        .fromTo(this.$refs.ship, 2.4, {rotation:-8, ease:"power1.inOut"}, {rotation:0});
+    removeAnimateClass: function() {
+      this.$refs.ship.classList.remove('rotate');
     }
   },
   mounted() {
-    this.animateShip();
+    this.$refs.ship.addEventListener("webkitAnimationEnd", this.removeAnimateClass);
+    this.$refs.ship.addEventListener("animationend", this.removeAnimateClass);    
   },
   watch: {
     $route () {
-      console.log('hi colleen route changed', this.$route)
+      this.$refs.ship.classList.add('rotate');
     }
   }
 }
@@ -121,5 +113,27 @@ svg {
 
 .wave-2 {
   visibility: hidden;
+}
+
+.rotate {
+  animation: rotate 5s ease-out 2;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-7deg);
+  }
+
+  52% {
+    transform: rotate(-7deg);
+  }
+
+  98% {
+    transform: rotate(0deg);
+  }
 }
 </style>

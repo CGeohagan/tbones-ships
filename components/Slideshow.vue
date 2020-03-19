@@ -20,7 +20,8 @@
           v-for="(image, index) in images" 
           :key="`item-${index}`"
           :class="[index === activeIndex ? 'active' : 'inactive']"
-          class="slideshow__item">
+          class="slideshow__item"
+          ref="slides">
           <img :src="image">
         </li>
       </ul>

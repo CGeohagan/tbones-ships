@@ -15,7 +15,11 @@ module.exports = {
     ],
     bodyAttrs: {
       class: 'hidden'
-    }
+    },
+    script: [
+      { src: 'gsap/TweenMax.min.js' },
+      { src: 'gsap/MorphSVGPlugin.min.js' },
+    ]
   },
   plugins: [
     { ssr: false, src: '~plugins/appear' }

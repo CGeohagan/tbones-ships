@@ -74,8 +74,25 @@ export default {
 @import "../assets/scss/main.scss";
 
 .slideshow {
+  min-height: 200px;
   overflow: hidden;
   width: 100%;
+
+  @media screen and (min-width: $break-small) {
+    min-height: 300px;
+  }
+
+  @media screen and (min-width: 990px) {
+    min-height: 375px;
+  }
+
+  @media screen and (min-width: 1100px) {
+    min-height: 440px;
+  }
+
+  @media screen and (min-width: 1220px) {
+    min-height: 470px;
+  }
 
   &__arrows {
     align-items: center;

@@ -111,7 +111,7 @@ export default {
     overflow: hidden;
 
     &.active {
-      height: 165px;
+      height: 550px;
     }
   }
 
@@ -148,7 +148,13 @@ export default {
   }
 }
 
+.hidden {
+  opacity: 0;
+}
+
 .card-body {
+  transition: opacity .3s ease;
+
   &__header {
     font-size: 32px;
     letter-spacing: 1px;

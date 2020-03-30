@@ -25,7 +25,6 @@ import AppHeader from '~/components/AppHeader.vue'
 import AppFooter from '~/components/AppFooter.vue'
 import Ship from '~/components/Ship.vue'
 import { mapState } from 'vuex'
-import { TimelineMax } from 'gsap'
 
 export default {
   components: {

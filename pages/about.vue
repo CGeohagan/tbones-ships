@@ -9,7 +9,7 @@
           <p>
             My interest in model ship building started with my grandfather John Fink. He had an antique replica of the Santa Maria
             in his living room. My name is Tom (my kids call me TBone), and I've constructed many model ships over the years, becoming more practiced
-            with each ship constructed. I'm excited to be able to share them with you.
+            with each ship constructed. I'm excited to be able to share them with you. If you'd like to learn more about these ships, please <a href="mailto:tmmc86@gmail.com" target="_blank">email me</a>.
           </p>
           <p>
             This image was taken at my daughter Megan's wedding. When I'm not building ships, I'm usually playing tennis with my wife Marilyn or reading about the Civil War.

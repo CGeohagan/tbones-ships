@@ -100,7 +100,7 @@ export default {
     justify-content: space-between;
     left: 5%;
     position: absolute;
-    top: 41%;
+    top: 44%;
     width: 90%;
     z-index: 10;
 

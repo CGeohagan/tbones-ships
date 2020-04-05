@@ -94,8 +94,8 @@ export default {
 
 .ship__wrapper {
   position: absolute;
-  // -webkit-transform:translateZ(0);
-  // transform: translateZ(0);
+  -webkit-transform:translateX(0);
+  transform: translateX(0);
   width: 100%;
 
   @media screen and (max-width: $break-small) {

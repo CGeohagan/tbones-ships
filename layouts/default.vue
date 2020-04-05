@@ -52,6 +52,7 @@ main {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 2em;
+  position: relative;
   width: 100%;
 
   @media screen and (max-width: $break-small) {
@@ -64,6 +65,7 @@ main {
   height: 100%;
   min-height: calc(100vh - 130px);
   padding: 2em;
+  position: relative;
 
   @media screen and (max-width: $break-small) {
     padding: 0;

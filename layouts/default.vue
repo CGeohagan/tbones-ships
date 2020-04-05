@@ -33,22 +33,8 @@ export default {
     AppFooter,
     Ship
   },
-  methods: {
-    stickyFooter: function() {
-      const border = document.querySelector('.border');
-      const footer = document.querySelector('footer');
-      const footerHeight = footer.clientHeight;
-      const header = document.querySelector('header');
-      const headerHeight = header.clientHeight;
-      
-      border.style.minHeight = `calc(100vh - ${headerHeight + footerHeight}px)`;
-    },
-  },
   computed: {
     ...mapState(['page'])
-  },
-  mounted() {
-    this.stickyFooter();
   },
 }
 </script>

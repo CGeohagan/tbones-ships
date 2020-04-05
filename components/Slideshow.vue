@@ -136,6 +136,7 @@ export default {
 }
 
 .arrow {
+  align-items: center;
   color: $dark-blue;
   display: flex;
   cursor: pointer;

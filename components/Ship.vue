@@ -74,7 +74,6 @@ export default {
 @import "../assets/scss/main.scss";
 
 .circle {
-  border: 2px solid #020AAA;
   border: 2px solid #D8D8D8;
   border-radius: 100%;
   height: 100px;
@@ -82,6 +81,10 @@ export default {
   overflow: hidden;
   position: relative;
   width: 100px;
+
+  /* this places circle on its own rendering layer */
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0);
 }
 
 .ship__wrapper,

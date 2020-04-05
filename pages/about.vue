@@ -60,6 +60,14 @@ export default {
       font-size: 20px;
       margin-bottom: 1rem;
     }
+
+    a {
+      color: $rust;
+
+      &:hover {
+        color: $peach;
+      }
+    }
   }
 
   &__image {

@@ -59,7 +59,8 @@ export default {
       this.forceRerender();
     },
     forceRerender() {
-      this.componentKey += 1;  
+      this.componentKey += 1;
+      this.scrollToTop();
     },
     initialDesktopTab() {
       if (!this.isMobile) {
@@ -71,6 +72,9 @@ export default {
     toggleMobileTabMenu() {
       if (!this.isMobile) return;
       this.tabMenuActive = !this.tabMenuActive;
+    },
+    scrollToTop() {
+      window.scrollTo(0,0);
     }
   },
   mounted() {

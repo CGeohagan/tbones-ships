@@ -50,7 +50,10 @@ module.exports = {
     // }
   },
   router: {
-    middleware: 'pages'
+    middleware: 'pages',
+    scrollBehavior (to, from, savedPosition) {
+      return ({ x: 0, y: 0 })
+    }
   }
 }
 

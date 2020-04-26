@@ -21,6 +21,20 @@ const shipData = [
         coordinates: '23.136° N, -82.358° W'
     },
     {
+        name: 'Essex',
+        description: 'The Essex was a whaling ship from Nantucket, Massachusetts famous for being rammed and sunk by a large whale in the southern Pacific Ocean. Stranded thousands of miles from the coast of South America, the crew was forced to use the remaining whaleboats to try to find land. The book "Moby Dick" by Herman Melville is based on their story.',
+        images: ['/images/essex/image1.jpg', '/images/essex/image2.jpg', '/images/essex/image3.jpg'],
+        location: 'West coast of South America',
+        coordinates: '-0.667° S, -119° W'
+    },
+    {
+        name: 'HMS Pandora',
+        description: 'The HMS Pandora is plank on bulkhead construction, meaning the frame is built and then the hull planking is added separately. The Pandora was a Frigate and was smallish in size. She had an undistinguished career being the ship that was tasked by British Admiralty to go to the SouthSeas and find the missing HMS Bounty. She found some survivors and took them prisoner but unfortunately she sank on the Great Barrier Reef near Australia.',
+        images: ['/images/pandora/image1.jpg', '/images/pandora/image2.jpg', '/images/pandora/image3.jpg'],
+        location: 'Great Barrier Reef near Australia',
+        coordinates: '-18.156° S, 147.485° E'
+    },
+    {
         name: 'USS Constitution',
         description: 'The USS Constitution was also known as Old Ironsides. This model was built in 2017. This model depicts sails being furled. The USS Constitution is famous for seabattles fought during the War of 1812. It is still on active duty in todays Navy.',
         images: ['/images/ussconstitution/image1.jpg', '/images/ussconstitution/image2.jpg', '/images/ussconstitution/image3.jpg'],

@@ -115,7 +115,7 @@ export default {
     overflow: hidden;
 
     &.active {
-      height: 550px;
+      height: 660px;
     }
   }
 

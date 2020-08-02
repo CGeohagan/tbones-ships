@@ -28,6 +28,13 @@ const shipData = [
         coordinates: '-0.667° S, -119° W'
     },
     {
+        name: 'HMY Royal Caroline',
+        description: 'The HMY Royal Caroline was a ship-rigged royal yacht which was ordered to replace the HMY Carolina as the principal British royal yacht in 1749. In 1761, the yacht conveyed Duchess Charlotte of Mecklenburg-Strelitz from Cuxhaven, Kiel to marry George III. It was renamed HMY Royal Charlotte in honor of the occasion.',
+        images: ['/images/royalcaroline/image1.jpg', '/images/royalcaroline/image2.jpg', '/images/royalcaroline/image3.jpg'],
+        location: 'River Thames, Deptford Dockyard, London England',
+        coordinates: '51.4865° N, 0.0276° W'
+    },
+    {
         name: 'HMS Pandora',
         description: 'The HMS Pandora is plank on bulkhead construction, meaning the frame is built and then the hull planking is added separately. The Pandora was a Frigate and was smallish in size. She had an undistinguished career being the ship that was tasked by British Admiralty to go to the SouthSeas and find the missing HMS Bounty. She found some survivors and took them prisoner but unfortunately she sank on the Great Barrier Reef near Australia.',
         images: ['/images/pandora/image1.jpg', '/images/pandora/image2.jpg', '/images/pandora/image3.jpg'],

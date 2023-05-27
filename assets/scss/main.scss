@@ -1,14 +1,15 @@
 $white: #fff;
-$light-grey: #D8D8D8;
-$peach: #E1D4C4;
+$light-grey: #d8d8d8;
+$peach: #e1d4c4;
 $dark-blue: #020319;
-$rust: #AF470A;
-$blue: #020AAA;
+$rust: #af470a;
+$blue: #020aaa;
 
 $break-small: 727px;
 
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -18,19 +19,28 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-h1, h2, h3, p, li, a, span {
+h1,
+h2,
+h3,
+p,
+li,
+a,
+span {
   color: $light-grey;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-weight: 400;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 32px;
 
   @media screen and (max-width: $break-small) {
@@ -38,21 +48,18 @@ h1, h2 {
   }
 }
 
-li, p {
+li,
+p {
   font-size: 24px;
 }
-
-// p {
-//     // font-family: 'Roboto', sans-serif;
-//     color: $light-grey;
-// }
 
 img {
   display: block;
   max-width: 100%;
 }
 
-a, li {
+a,
+li {
   text-decoration: none;
   transition: color 0.3s ease-out;
 
@@ -68,6 +75,3 @@ section {
 .border .ship-margin {
   margin-top: 100px;
 }
-
-
-

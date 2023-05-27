@@ -1,7 +1,9 @@
 <template>
   <div class="cards">
     <div class="card-tabs__wrapper ship-margin slide" key="card-tabs">
-      <h2 class="card-tabs__header" v-on:click="toggleMobileTabMenu">Ships to Explore</h2>
+      <h2 class="card-tabs__header" v-on:click="toggleMobileTabMenu">
+        Ships to Explore
+      </h2>
       <ul class="card-tabs" v-bind:class="{ active: tabMenuActive }">
         <li
           class="tab"
@@ -10,14 +12,19 @@
           v-bind:class="{
             'tab--active': activeTabIndex === index
           }"
-          v-on:click="switchTab(index)">
+          v-on:click="switchTab(index)"
+        >
           {{ tab.name }}
         </li>
       </ul>
     </div>
-    <div class="card-body slide" v-for="(tab, index) in activeTabs" :key="`activeTab-${index}`">
+    <div
+      class="card-body slide"
+      v-for="(tab, index) in activeTabs"
+      :key="`activeTab-${index}`"
+    >
       <h2 class="card-body__header">{{ tab.name }}</h2>
-      <slideshow v-bind:images="tab.images" :key="componentKey"/>
+      <slideshow v-bind:images="tab.images" :key="componentKey" />
       <div class="card-details">
         <p><span>Location: </span> {{ tab.location }}</p>
         <p><span>Coordinates: </span> {{ tab.coordinates }}</p>
@@ -28,8 +35,8 @@
 </template>
 
 <script>
-import Slideshow from '~/components/Slideshow.vue'
-import shipData from '~/assets/data/shipData.js'
+import Slideshow from "~/components/Slideshow.vue";
+import shipData from "~/assets/data/shipData.js";
 
 export default {
   components: {
@@ -42,12 +49,12 @@ export default {
       componentKey: 0,
       tabs: shipData,
       tabMenuActive: false
-    }
+    };
   },
   computed: {
     isMobile() {
-      return window.matchMedia('(max-width: 727px)').matches;
-    },
+      return window.matchMedia("(max-width: 727px)").matches;
+    }
   },
   methods: {
     switchTab(tabIndex) {
@@ -74,14 +81,13 @@ export default {
       this.tabMenuActive = !this.tabMenuActive;
     },
     scrollToTop() {
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
     }
   },
   mounted() {
     this.initialDesktopTab();
   }
-}
-
+};
 </script>
 
 <style lang="scss">
@@ -96,8 +102,9 @@ export default {
   flex-direction: row;
   justify-content: space-between;
 
-  p, span {
-    font-family: 'Spectral', serif;
+  p,
+  span {
+    font-family: "Spectral", serif;
     font-size: 21px;
     font-style: italic;
   }
@@ -111,7 +118,7 @@ export default {
   @media screen and (max-width: $break-small) {
     height: 0;
     padding: 0;
-    transition: height .3s ease;
+    transition: height 0.3s ease;
     overflow: hidden;
 
     &.active {
@@ -134,7 +141,6 @@ export default {
 
     @media screen and (max-width: $break-small) {
       border: 2px solid $light-grey;
-      // color: $rust;
       margin: 2.5rem auto 0;
       padding: 10px;
     }
@@ -142,7 +148,7 @@ export default {
 
   li {
     cursor: pointer;
-    display: block; 
+    display: block;
     text-align: center;
 
     @media screen and (max-width: $break-small) {
@@ -157,7 +163,7 @@ export default {
 }
 
 .card-body {
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 
   &__header {
     font-size: 32px;
@@ -206,5 +212,4 @@ export default {
     width: 100%;
   }
 }
-
 </style>

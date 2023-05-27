@@ -1,28 +1,32 @@
 <template>
   <div class="slideshow__wrapper">
     <div class="slideshow__arrows">
-      <div 
-        v-on:click="leftClick" 
+      <div
+        v-on:click="leftClick"
         class="arrow arrow-left"
-        :class="[activeIndex === 0 ? 'hidden' : '']">
-        <arrow/>
+        :class="[activeIndex === 0 ? 'hidden' : '']"
+      >
+        <arrow />
       </div>
-      <div 
-        v-on:click="rightClick" 
+      <div
+        v-on:click="rightClick"
         class="arrow arrow-right"
-        :class="[activeIndex === numberOfImages - 1 ? 'hidden' : '']">
-        <arrow/>
+        :class="[activeIndex === numberOfImages - 1 ? 'hidden' : '']"
+      >
+        <arrow />
       </div>
     </div>
     <div class="slideshow">
-      <ul class="slideshow__list" :style="slideshowStyle" >
-        <li 
-          v-for="(image, index) in images" 
+      <ul class="slideshow__list" :style="slideshowStyle">
+        <li
+          v-for="(image, index) in images"
           :key="`item-${index}`"
           :class="[index === activeIndex ? 'active' : 'inactive']"
+          :style="slideStyle"
           class="slideshow__item"
-          ref="slides">
-          <img :src="image">
+          ref="slides"
+        >
+          <img :src="image" />
         </li>
       </ul>
     </div>
@@ -30,25 +34,29 @@
 </template>
 
 <script>
-import Arrow from '~/components/Arrow.vue'
+import Arrow from "~/components/Arrow.vue";
 
 export default {
   components: {
     Arrow
   },
-  props: ['images'],
+  props: ["images"],
   computed: {
-    slideshowStyle () {
-      const currentTransform = this.activeIndex * 100 / this.numberOfImages;
-      return `width: ${this.numberOfImages * 100}%; transform: translateX(-${currentTransform}%)`
+    slideshowStyle() {
+      const currentTransform = (this.activeIndex * 100) / this.numberOfImages;
+      return `width: ${this.numberOfImages *
+        100}%; transform: translateX(-${currentTransform}%)`;
     },
+    slideStyle() {
+      return `width: ${100 / this.numberOfImages}%;`;
+    }
   },
   methods: {
     rightClick: function(ev) {
       ev.stopPropagation();
       if (this.activeIndex === this.numberOfImages - 1) {
         return;
-      } 
+      }
 
       this.activeIndex++;
     },
@@ -56,18 +64,18 @@ export default {
       ev.stopPropagation();
       if (this.activeIndex === 0) {
         return;
-      } 
+      }
 
       this.activeIndex--;
-    },
+    }
   },
   data() {
     return {
       activeIndex: 0,
-      numberOfImages: this.images.length,
-    }
-  },
-}
+      numberOfImages: this.images.length
+    };
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -111,7 +119,7 @@ export default {
   }
 
   &__item {
-    transition: transform .4s ease-out;
+    transition: transform 0.4s ease-out;
   }
 
   &__list {
@@ -119,7 +127,7 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0;
-    transition: all .4s ease-out;
+    transition: all 0.4s ease-out;
   }
 
   &__wrapper {
@@ -141,7 +149,7 @@ export default {
   display: flex;
   cursor: pointer;
   transform-origin: center center;
-  transition: transform .3s ease-out, opacity .3s ease-out;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   width: 60px;
 
   &:hover {

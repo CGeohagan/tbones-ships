@@ -1,5 +1,32 @@
 const shipData = [
   {
+    name: "Sovereign of the Seas",
+    description:
+      "The Sovereign of the Seas was a very ornate and large English warship launched in 1637. It was so expensive to build that they put an unpopular tax on the people known as the ship tax.",
+    images: [
+      "/images/sovereignoftheseas/image1.jpg",
+      "/images/sovereignoftheseas/image2.jpg",
+      "/images/sovereignoftheseas/image3.jpg",
+      "/images/sovereignoftheseas/image4.jpg",
+      "/images/sovereignoftheseas/image5.jpg"
+    ],
+    location: "Chatham",
+    coordinates: "51.37° N, 0.52° E"
+  },
+  {
+    name: "La Soleil Royal",
+    description:
+      "La Soleil Royal was built in 1669 at the request of the Sun King Louis XIV.  He was one of the greatest Kings of France and the ship was very ornate to reflect his greatness.",
+    images: [
+      "/images/lasoleilroyal/image1.jpg",
+      "/images/lasoleilroyal/image2.jpg",
+      "/images/lasoleilroyal/image3.jpg",
+      "/images/lasoleilroyal/image4.jpg"
+    ],
+    location: "Cherbourg, France",
+    coordinates: "49.63° N, 1.62° W"
+  },
+  {
     name: "Riverboat",
     description:
       "In the 19th century the riverboat was a main source for trade and travel on the Mississippi river. I decided to finish this model with clear lacquer in order to highlight the natural wood colors. The guardrails are brass.",
@@ -24,18 +51,6 @@ const shipData = [
     ],
     location: "Havana, Cuba",
     coordinates: "23.136° N, -82.358° W"
-  },
-  {
-    name: "Essex",
-    description:
-      'The Essex was a whaling ship from Nantucket, Massachusetts famous for being rammed and sunk by a large whale in the southern Pacific Ocean. Stranded thousands of miles from the coast of South America, the crew was forced to use the remaining whaleboats to try to find land. The book "Moby Dick" by Herman Melville is based on their story.',
-    images: [
-      "/images/essex/image1.jpg",
-      "/images/essex/image2.jpg",
-      "/images/essex/image3.jpg"
-    ],
-    location: "West coast of South America",
-    coordinates: "-0.667° S, -119° W"
   },
   {
     name: "HMY Royal Caroline",
@@ -179,18 +194,6 @@ const shipData = [
     images: ["/images/gertrude/image1.jpg"],
     location: "La Guaira, Venezuela",
     coordinates: "10.6025° N, -66.9313° W"
-  },
-  {
-    name: "Black Pearl",
-    description:
-      'Black Pearl based on the pirate ship in the movie "Pirates of the Caribbean". The original ship had black sails and hull. This is a true plank on bulkhead construction. This model was built by laying the keel, adding the framing and then forming and attaching the side planking. This is museum quality.',
-    images: [
-      "/images/blackpearl/image1.jpg",
-      "/images/blackpearl/image2.jpg",
-      "/images/blackpearl/image3.jpg"
-    ],
-    location: "Tortuga",
-    coordinates: "18.9712° N, -72.2852° W"
   }
 ];
 
